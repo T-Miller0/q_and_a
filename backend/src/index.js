@@ -58,3 +58,7 @@ app.post('/answer/:id', (req, res) => {
 
   res.status(200).send();
 });
+
+app.listen(8081, () => {
+  console.log('listening on port 8081');
+});
