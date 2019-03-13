@@ -32,3 +32,15 @@ app.get('/:id', (req, res) => {
   if (question.length === 0) return res.status(404).send();
   res.send(question[0]);
 });
+
+app.post('/', (req, res) => {
+  const {title, description} = req.body;
+  const newQuestion = {
+    id: questions.length + 1,
+    title,
+    description,
+    answers: [],
+  };
+  questions.push(newQuestion);
+  res.status(200).send();
+});
