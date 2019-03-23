@@ -10,3 +10,10 @@ class Questions extends Component {
       questions: null,
     };
   }
+
+  async componentDidMount() {
+  const questions = (await axios.get('http://localhost:8081/')).data;
+  this.setState({
+    questions,
+  });
+}
